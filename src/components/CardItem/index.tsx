@@ -1,10 +1,8 @@
-import { useState } from 'react'
-
-import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { ShoppingCart } from 'phosphor-react'
+import { InputWithButtons } from '../InputWithButtons'
 
 import * as S from "./styles"
 
-import itemCoffee from "../../assets/item-coffee.png"
 import { Tag } from './_elements/Tag'
 
 interface Props {
@@ -13,11 +11,12 @@ interface Props {
     valueMoney: string
     tagArea: string[]
     img: string
+    handleClick: () => void
+    initialValue: string
+    id: number
 }
 
-export const CardItem = ({ titleCard, subtitle, valueMoney, tagArea, img }: Props) => {
-    const [inputNumber, setInputNumber] = useState("0")
-
+export const CardItem = ({ titleCard, subtitle, valueMoney, tagArea, img, handleClick, initialValue, id }: Props) => {
     return (
         <S.ShapeCardItem>
             <S.ImageArea>
@@ -37,12 +36,8 @@ export const CardItem = ({ titleCard, subtitle, valueMoney, tagArea, img }: Prop
                 <div>
                     <span>R$ <strong>{valueMoney}</strong></span>
                 </div>
-                <S.WrapperInputAddQuantity>
-                    <Minus size={20} weight="fill" className='icon' onClick={() => setInputNumber(state => Number(state) <= 0 ? "0" : String(Number(state) - 1))} />
-                    <S.InputStyles type="number" value={inputNumber} onChange={(e) => setInputNumber(e.target.value)} />
-                    <Plus size={20} weight="fill" className='icon' onClick={() => setInputNumber(state => String(Number(state) + 1))} />
-                </S.WrapperInputAddQuantity>
-                <S.ButtonAddToCart>
+                <InputWithButtons initialValue={initialValue} id={id} />
+                <S.ButtonAddToCart type='button' onClick={handleClick}>
                     <ShoppingCart size={22} weight="fill" className='cart' />
                 </S.ButtonAddToCart>
             </S.WrapperValue>
