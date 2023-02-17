@@ -19,7 +19,6 @@ export const WrapperCoffees = () => {
     const { item: coffees, handleAddItemToCheckout } = useContext(CartContext)
 
     const handleAddToCart = (e: ItemCart) => {
-        // console.log(e);
         handleAddItemToCheckout(e)
     }
 

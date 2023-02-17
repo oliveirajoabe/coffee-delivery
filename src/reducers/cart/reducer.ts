@@ -32,12 +32,16 @@ export function cartReducer(state: CartState, action: any) {
         }
 
         case ActionsTypes.ADD_TO_CART: {
-            const item = state.itemCheckout.findIndex(item => {
+            const indexItemCheckout = state.itemCheckout.findIndex(item => {
+                return item.id === action.payload.item.id
+            })
+            const indexItem = state.item.findIndex(item => {
                 return item.id === action.payload.item.id
             })
             return produce(state, (draft) => {
-                if (item !== -1) {
-                    draft.itemCheckout[item].quantity = action.payload.item.quantity
+                if (indexItemCheckout !== -1) {
+                    draft.itemCheckout[indexItemCheckout].quantity = action.payload.item.quantity
+                    draft.item[indexItem].quantity = action.payload.item.quantity
                 } else {
                     draft.itemCheckout.push(action.payload.item)
                 }
