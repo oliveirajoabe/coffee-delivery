@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.div`
     > nav {
@@ -23,6 +23,25 @@ export const HeaderContainer = styled.div`
                 }
             }
         }
+    }
+`
+
+export const TotalCart = styled.div`
+    ${({ theme }) => css`
+        text-align: center;
+
+        background-color: ${theme['yellow-300']};
+        border-radius: 50%;
+        
+        padding: 5px 8px;
+        font-size: 12px;
+
+        position: absolute;
+        top: 20px;
+        right: 152px;
+        font-weight: 700;
+        color: ${theme['white-100']}
+    `
     }
 `
 

@@ -36,7 +36,7 @@ export const CardItem = ({ titleCard, subtitle, valueMoney, tagArea, img, handle
                 <div>
                     <span>R$ <strong>{valueMoney}</strong></span>
                 </div>
-                <InputWithButtons initialValue={initialValue} id={id} />
+                <InputWithButtons initialValueQuantity={initialValue} id={id} />
                 <S.ButtonAddToCart type='button' onClick={handleClick}>
                     <ShoppingCart size={22} weight="fill" className='cart' />
                 </S.ButtonAddToCart>

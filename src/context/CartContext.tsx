@@ -10,6 +10,7 @@ interface CartContextProviderProps {
 
 interface CartContextType {
     item: ItemCart[]
+    itemCheckout: ItemCart[]
     handleItemCartAdd: (item: Quantity) => void
     handleItemCartRemove: (item: Quantity) => void
     handleInputAddItemWithInput: (item: Quantity) => void
@@ -41,13 +42,11 @@ export function CartContextProvider({
         dispatch(addItemToCheckout({ ...item }))
     }
 
-    console.log(itemCheckout);
-
-
     return (
         <CartContext.Provider
             value={{
                 item,
+                itemCheckout,
                 handleItemCartAdd,
                 handleItemCartRemove,
                 handleInputAddItemWithInput,

@@ -4,18 +4,18 @@ import { CartContext } from '../../context/CartContext'
 import * as S from "./styles"
 
 interface Props {
-    initialValue: string
+    initialValueQuantity: string
     id: number
 }
-export const InputWithButtons = ({ initialValue, id }: Props) => {
+export const InputWithButtons = ({ initialValueQuantity, id }: Props) => {
     const { handleItemCartAdd, handleItemCartRemove, handleInputAddItemWithInput } = useContext(CartContext)
 
     const handleAddItem = () => {
-        handleItemCartAdd({ quantity: initialValue, id })
+        handleItemCartAdd({ quantity: initialValueQuantity, id })
     }
 
     const handleRemoveItem = () => {
-        handleItemCartRemove({ quantity: initialValue, id })
+        handleItemCartRemove({ quantity: initialValueQuantity, id })
     }
 
     const handleInput = (e: any) => {
@@ -33,7 +33,7 @@ export const InputWithButtons = ({ initialValue, id }: Props) => {
             />
             <S.InputStyles
                 type="number"
-                value={initialValue}
+                value={initialValueQuantity}
                 onChange={handleInput} />
             <Plus
                 size={20}
