@@ -160,6 +160,45 @@ export const ShapeItems = styled.div`
             display: flex;
             align-items: center;
             width: 50%;
+            gap: 8px;
         }
     }
+`
+
+export const ButtonRemove = styled.button`
+    ${({ theme }) => css`
+        height: 38px;
+        padding: 8px;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 12px;
+        color: ${theme["black-200"]};
+        cursor: pointer;
+        background-color: ${theme["gray-300"]};
+        border: none;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .icon {
+            color: ${theme["purple-200"]};
+        }
+    `}
+`
+
+export const ButtonSubmit = styled.button`
+    ${({ theme }) => css`
+        margin-top: 24px;
+        width: 100%;
+        height: 46px;
+        text-transform: uppercase;
+        background-color: ${theme["yellow-200"]};
+        color: ${theme["white-100"]};
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
+    `}
 `

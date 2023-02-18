@@ -1,4 +1,4 @@
-import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import { CurrencyDollar, MapPinLine, Trash } from "phosphor-react";
 import { useContext } from "react";
 import { InputWithButtons } from "../../components/InputWithButtons";
 import ShapeContent from "../../components/ShapeContent";
@@ -71,11 +71,21 @@ export default function Checkout() {
                                                     id={item.id}
                                                     initialValueQuantity={item.quantity}
                                                 />
-                                                <div>remover</div>
+                                                <div>
+                                                    <S.ButtonRemove type="button">
+                                                        <Trash size={20} className="icon" />
+                                                        <span>
+                                                            remover
+                                                        </span>
+                                                    </S.ButtonRemove>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 ))}
+                                <div>
+                                    <S.ButtonSubmit type="submit">confirmar pedido</S.ButtonSubmit>
+                                </div>
                             </S.ShapeItems>
                         </div>
                     </S.WrapperCheckout>
