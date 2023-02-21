@@ -138,6 +138,7 @@ export const ShapeItems = styled.div`
     background-color: ${({ theme }) => theme["gray-100"]};
     border-radius: 6px 44px;
     padding: 40px;
+    width: 448px;
     
     .items {
         display: flex;
@@ -186,10 +187,66 @@ export const ButtonRemove = styled.button`
         }
     `}
 `
+export const WrapperQuantity = styled.div`
+    width:100%;
+`
+
+export const WrapperItemsCheckout = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+`
+
+export const TitleCheckoutItem = styled.span`
+    ${({theme }) => css`
+        font-size: 16px;
+        color: ${theme["black-300"]};
+        font-weight: 400;
+        width: 100%;
+    `}
+`
+
+export const PriceTitleCheckoutItem = styled.span`
+    ${({theme}) => css`
+        color: ${theme["black-200"]};
+        font-weight: 700;
+        font-size: 16px;
+        width: 30%;
+    `}
+`
+
+export const TitlePrice = styled.span`
+    ${({theme}) => css`
+        color: ${theme["black-200"]};
+        font-weight: 400;
+        font-size: 14px;
+    `}
+`
+
+export const PriceToTitle = styled(TitlePrice)`
+    font-size: 16px;
+`
+
+export const TotalPrice = styled.span`
+    ${({theme}) => css`
+        color: ${theme["black-300"]};
+        font-size: 20px;
+        font-weight: 700;
+    `}
+`
+
+export const WrapperValues = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    &:first-child {
+        margin-top: 24px;
+    }
+`
 
 export const ButtonSubmit = styled.button`
     ${({ theme }) => css`
-        margin-top: 24px;
+        margin-top: 12px;
         width: 100%;
         height: 46px;
         text-transform: uppercase;

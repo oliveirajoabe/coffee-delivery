@@ -63,8 +63,11 @@ export default function Checkout() {
                                         <div className="img">
                                             <img src={item.img} alt="" />
                                         </div>
-                                        <div>
-                                            <span>{item.titleCard}</span>
+                                        <S.WrapperQuantity>
+                                            <S.WrapperItemsCheckout>
+                                                <S.TitleCheckoutItem>{item.titleCard}</S.TitleCheckoutItem>
+                                                <S.PriceTitleCheckoutItem>R$ {item.valueMoney}</S.PriceTitleCheckoutItem>
+                                            </S.WrapperItemsCheckout>
 
                                             <div className="buttons">
                                                 <InputWithButtons
@@ -80,9 +83,23 @@ export default function Checkout() {
                                                     </S.ButtonRemove>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </S.WrapperQuantity>
                                     </div>
                                 ))}
+                                <div>
+                                    <S.WrapperValues>
+                                        <S.TitlePrice>Total de itens</S.TitlePrice>
+                                        <S.PriceToTitle>R$ 29,70</S.PriceToTitle>
+                                    </S.WrapperValues>
+                                    <S.WrapperValues>
+                                        <S.TitlePrice>Entrega</S.TitlePrice>
+                                        <S.PriceToTitle>R$ 3,50</S.PriceToTitle>
+                                    </S.WrapperValues>
+                                    <S.WrapperValues>
+                                        <S.TotalPrice>Total</S.TotalPrice>
+                                        <S.TotalPrice>R$ 33,20</S.TotalPrice>
+                                    </S.WrapperValues>
+                                </div>
                                 <div>
                                     <S.ButtonSubmit type="submit">confirmar pedido</S.ButtonSubmit>
                                 </div>

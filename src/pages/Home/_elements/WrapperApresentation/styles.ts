@@ -6,6 +6,10 @@ export const WrapperApresentation = styled.div`
     padding: 92px 0;
     gap: 50px;
 
+    @media (max-width:768px) {
+        flex-direction: column;
+    }
+
     h1 {
         font-family: 'Baloo 2';
         font-size: 48px;
